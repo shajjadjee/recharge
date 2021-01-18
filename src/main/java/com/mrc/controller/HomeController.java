@@ -12,33 +12,8 @@ public class HomeController {
 	public ModelAndView index() {
 		return new ModelAndView("index");
 	}
-	@GetMapping("/login")
-	public ModelAndView login() {
-		return new ModelAndView("login");
+	@GetMapping("/deshboard")
+	public ModelAndView deshboard() {
+		return new ModelAndView("deshboard");
 	}
-	@GetMapping("/signup")
-	public ModelAndView signup() {
-		return new ModelAndView("signup");
-	}
-	@GetMapping("/recharge")
-	public ModelAndView recharge() {
-		return new ModelAndView("recharge");
-	}
-	@GetMapping("/report")
-	public ModelAndView report() {
-		return new ModelAndView("report");
-	}
-	@GetMapping("/transaction")
-	public ModelAndView transaction() {
-		return new ModelAndView("transaction");
-	}
-	@GetMapping("/user")
-	public ModelAndView user() {
-		return new ModelAndView("user");
-	}
-	@GetMapping("/wallet")
-	public ModelAndView wallet() {
-		return new ModelAndView("wallet");
-	}
-
 }

@@ -48,7 +48,7 @@ public class AppConfig extends WebMvcConfigurerAdapter {
     public LocalSessionFactoryBean sessionFactory() {
         LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
         sessionFactory.setDataSource(dataSource());
-        sessionFactory.setPackagesToScan("com.mrc.model");
+        sessionFactory.setPackagesToScan("com.mrc.model", "com.mrc.auth.model");
         sessionFactory.setHibernateProperties(hibernateProperties());
  
         return sessionFactory;
