@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,44 +29,65 @@
 					</div>
 				</div>
 				<div class="card-body">
-					<form>
+					<form action="${contextPath}/signup" method="post">
+						<input type="hidden" name="${_csrf.parameterName}"
+							value="${_csrf.token}" />
 						<div class="input-group form-group">
 							<div class="input-group-prepend">
 								<span class="input-group-text"><i class="fa fa-user"></i></span>
 							</div>
-							<input type="text" class="form-control" placeholder="username">
+							<input type="text" name="username" class="form-control"
+								id="username" placeholder="username">
 
 						</div>
 						<div class="input-group form-group">
 							<div class="input-group-prepend">
 								<span class="input-group-text"><i class="fa fa-key"></i></span>
 							</div>
-							<input type="password" class="form-control"
-								placeholder="password">
+							<input type="password" name="password" class="form-control"
+								id="password" placeholder="password">
 						</div>
 						<div class="input-group form-group">
 							<div class="input-group-prepend">
 								<span class="input-group-text"><i class="fa fa-phone"></i></span>
 							</div>
-							<input type="text" class="form-control" placeholder="01******">
+							<input type="text" name="mobile" class="form-control" id="mobile"
+								placeholder="01******">
 						</div>
 						<div class="input-group form-group">
 							<div class="input-group-prepend">
 								<span class="input-group-text"><i
 									class="fa fa-envelope-o"></i></span>
 							</div>
-							<input type="email" class="form-control" placeholder="@">
+							<input type="email" name="email" class="form-control" id="email"
+								placeholder="@">
 						</div>
 						<div class="input-group form-group">
 							<div class="input-group-prepend">
 								<span class="input-group-text"><i
 									class="fa fa-address-card-o"></i></span>
 							</div>
-							<input type="text" class="form-control" placeholder="address">
+							<div class="form-check form-check-inline">
+							<input class="form-check-input" type="radio" name="gender"
+								id="inlineRadio1" value="male"> <label
+								class="form-check-label" for="inlineRadio1">Male</label>
+						</div>
+						<div class="form-check form-check-inline">
+							<input class="form-check-input" type="radio" name="gender"
+								id="inlineRadio2" value="female"> <label
+								class="form-check-label" for="inlineRadio2">Female</label>
+						</div>
 						</div>
 						<div class="form-group">
 							<input type="submit" value="Signup"
 								class="btn float-right login_btn">
+							<c:if test='${status.equals("success") }'>
+								<div class="alert alert-primary" role="alert">${message}</div>
+							</c:if>
+
+							<c:if test='${status.equals("error") }'>
+								<div class="alert alert-danger" role="alert">${message}</div>
+							</c:if>
 						</div>
 					</form>
 				</div>

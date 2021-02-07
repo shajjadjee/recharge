@@ -12,6 +12,10 @@ public class HomeController {
 	public ModelAndView index() {
 		return new ModelAndView("index");
 	}
+	@GetMapping("/index2")
+	public ModelAndView index2() {
+		return new ModelAndView("index2");
+	}
 	@GetMapping("/deshboard")
 	public ModelAndView deshboard() {
 		return new ModelAndView("deshboard");

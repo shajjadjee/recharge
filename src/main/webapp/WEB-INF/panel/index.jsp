@@ -14,7 +14,8 @@
 	href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
 	integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
 	crossorigin="anonymous" />
-<link rel="stylesheet" href="../assets/css/adminlayout2.css">
+
+<!-- <link rel="stylesheet" href="../assets/css/adminlayout2.css"> -->
 <title>Online Mobile rechrage</title>
 
 <jsp:include page="fcn.jsp" />
@@ -96,119 +97,161 @@
 				</div>
 			</section>
 		</div>
+
+		<br> <input type="button"
+			onclick="change(54,'Grameenphone','prepaid')" value="54 TK">
+		<input type="button" onclick="change(57,'Robi','postpaid')"
+			value="57 TK"> <input type="button"
+			onclick="location.href='/recharge',change(60,'Robi','prepaid')"
+			value="60 TK"> <a href="/recharge"
+			onclick="change(58,'Robi','postpaid')">58 TK</a> <br>
+		<div class="row">
+			<div class="col-sm-4">
+				<div class="card">
+					<div class="card-body">
+						<h5 class="card-title">90 Minutes 7 Days</h5>
+						<p class="card-text">
+							<i class="fa fa-calendar" aria-hidden="true"></i> 7 Days
+						</p>
+						<input type="button" onclick="change(57)" class="btn btn-primary"
+							value="57 TK" />
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<div class="card">
+					<div class="card-body">
+						<h5 class="card-title">90 Minutes 7 Days</h5>
+						<p class="card-text">
+							<i class="fa fa-calendar" aria-hidden="true"></i> 7 Days
+						</p>
+						<input type="button" onclick="change(57)" class="btn btn-primary"
+							value="57 TK" />
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<div class="card">
+					<div class="card-body">
+						<h5 class="card-title">90 Minutes 7 Days</h5>
+						<p class="card-text">
+							<i class="fa fa-calendar" aria-hidden="true"></i> 7 Days
+						</p>
+						<input type="button" onclick="change(57)" class="btn btn-primary"
+							value="57 TK" />
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="offerslide" class="row carousel slide" data-ride="carousel">
+
+			<div class="col-sm-12 carousel-inner">
+				<div class="col-sm-4 carousel-item active">
+
+					<div class="card">
+						<div class="card-body">
+							<h5 class="card-title">90 Minutes 7 Days</h5>
+							<p class="card-text">
+								<i class="fa fa-calendar" aria-hidden="true"></i> 7 Days
+							</p>
+							<input type="button" onclick="change(57)" class="btn btn-primary"
+								value="57 TK" />
+						</div>
+					</div>
+
+				</div>
+				<div class="col-sm-4 carousel-item">
+					<div class="card">
+						<div class="card-body">
+							<h5 class="card-title">30GB 7 Days</h5>
+							<p class="card-text">
+								<i class="fa fa-calendar" aria-hidden="true"></i> 7 Days
+							</p>
+							<a href="#" class="btn btn-primary">57 TK</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-4 carousel-item">
+					<div class="card">
+						<div class="card-body">
+							<h5 class="card-title">30GB 30 Days</h5>
+							<p class="card-text">
+								<i class="fa fa-calendar" aria-hidden="true"></i> 7 Days
+							</p>
+							<a href="#" class="btn btn-primary">649 TK</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<a class="carousel-control-prev" href="#offerslide" role="button"
+				data-slide="prev"> <span class="carousel-control-prev-icon"
+				aria-hidden="true"></span>
+
+			</a> <a class="carousel-control-next" href="#offerslide" role="button"
+				data-slide="next"> <span class="carousel-control-next-icon"
+				aria-hidden="true"></span>
+
+			</a>
+		</div>
 	</div>
-	<br>
-          <div id= "totalValue">Total price: $500 </div>
-          <br>
-          <input type="button" onclick="change(54,'Grameenphone','prepaid')" value="54 TK">
-          <input type="button" onclick="change(57,'Robi','postpaid')" value="57 TK">
-          <input type="button" onclick="location.href='/recharge',change(60,'Robi','prepaid')" value="60 TK">
-          <a href="/recharge" onclick="change(58,'Robi','postpaid')">58 TK</a>
-          <br><div class="row"><div class="col-sm-4">
-				<div class="card">
-					<div class="card-body">
-						<h5 class="card-title">90 Minutes 7 Days</h5>
-						<p class="card-text">
-							<i class="fa fa-calendar" aria-hidden="true"></i> 7 Days
-						</p>
-						<input type="button" onclick="change(57)" class="btn btn-primary" value="57 TK"/>
-					</div>
-				</div>
+
+		<div id="owl-demo" class="owl-carousel owl-theme">
+			<div class="item">
+				<h1>1</h1>
+			</div>
+			<div class="item">
+				<h1>2</h1>
+			</div>
+			<div class="item">
+				<h1>3</h1>
+			</div>
+			<div class="item">
+				<h1>4</h1>
+			</div>
+			<div class="item">
+				<h1>5</h1>
+			</div>
+			<div class="item">
+				<h1>6</h1>
+			</div>
+			<div class="item">
+				<h1>7</h1>
+			</div>
+			<div class="item">
+				<h1>8</h1>
+			</div>
+			<div class="item">
+				<h1>9</h1>
+			</div>
+			<div class="item">
+				<h1>10</h1>
+			</div>
+			<div class="item">
+				<h1>11</h1>
+			</div>
+			<div class="item">
+				<h1>12</h1>
+			</div>
+			<div class="item">
+				<h1>13</h1>
+			</div>
+			<div class="item">
+				<h1>14</h1>
+			</div>
+			<div class="item">
+				<h1>15</h1>
+			</div>
+			<div class="item">
+				<h1>16</h1>
+			</div>
 		</div>
-		<div class="col-sm-4">
-				<div class="card">
-					<div class="card-body">
-						<h5 class="card-title">90 Minutes 7 Days</h5>
-						<p class="card-text">
-							<i class="fa fa-calendar" aria-hidden="true"></i> 7 Days
-						</p>
-						<input type="button" onclick="change(57)" class="btn btn-primary" value="57 TK"/>
-					</div>
-				</div>
+
+		<div class="customNavigation">
+			<a class="btn prev">Previous</a> <a class="btn next">Next</a> <a
+				class="btn play">Autoplay</a> <a class="btn stop">Stop</a>
 		</div>
-		<div class="col-sm-4">
-				<div class="card">
-					<div class="card-body">
-						<h5 class="card-title">90 Minutes 7 Days</h5>
-						<p class="card-text">
-							<i class="fa fa-calendar" aria-hidden="true"></i> 7 Days
-						</p>
-						<input type="button" onclick="change(57)" class="btn btn-primary" value="57 TK"/>
-					</div>
-				</div>
-		</div></div>
-          <div id="offerslide" class="carousel slide" data-ride="carousel">
-          
-  <div class="carousel-inner">
-    <div class="row carousel-item active">
-    	<div class="col-sm-4">
-				<div class="card">
-					<div class="card-body">
-						<h5 class="card-title">90 Minutes 7 Days</h5>
-						<p class="card-text">
-							<i class="fa fa-calendar" aria-hidden="true"></i> 7 Days
-						</p>
-						<input type="button" onclick="change(57)" class="btn btn-primary" value="57 TK"/>
-					</div>
-				</div>
-		</div>
-		<div class="col-sm-4">
-				<div class="card">
-					<div class="card-body">
-						<h5 class="card-title">90 Minutes 7 Days</h5>
-						<p class="card-text">
-							<i class="fa fa-calendar" aria-hidden="true"></i> 7 Days
-						</p>
-						<input type="button" onclick="change(57)" class="btn btn-primary" value="57 TK"/>
-					</div>
-				</div>
-		</div>
-		<div class="col-sm-4">
-				<div class="card">
-					<div class="card-body">
-						<h5 class="card-title">90 Minutes 7 Days</h5>
-						<p class="card-text">
-							<i class="fa fa-calendar" aria-hidden="true"></i> 7 Days
-						</p>
-						<input type="button" onclick="change(57)" class="btn btn-primary" value="57 TK"/>
-					</div>
-				</div>
-		</div>
-		
-	</div>
-    <div class="carousel-item">
-      <div class="card" style="width: 18rem;">
-					<div class="card-body">
-						<h5 class="card-title">30GB 7 Days</h5>
-						<p class="card-text">
-							<i class="fa fa-calendar" aria-hidden="true"></i> 7 Days
-						</p>
-						<a href="#" class="btn btn-primary">57 TK</a>
-					</div>
-				</div>
-    </div>
-    <div class="carousel-item">
-      <div class="card" style="width: 18rem;">
-					<div class="card-body">
-						<h5 class="card-title">30GB 30 Days</h5>
-						<p class="card-text">
-							<i class="fa fa-calendar" aria-hidden="true"></i> 7 Days
-						</p>
-						<a href="#" class="btn btn-primary">649 TK</a>
-					</div>
-				</div>
-    </div>
-  </div>
-  <a class="carousel-control-prev" href="#offerslide" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    
-  </a>
-  <a class="carousel-control-next" href="#offerslide" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    
-  </a>
-</div>
-         
+
+
 
 	<div class="footer-below">
 		<div class="container">
