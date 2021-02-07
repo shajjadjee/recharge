@@ -16,6 +16,8 @@
 	crossorigin="anonymous" />
 <link rel="stylesheet" href="../assets/css/adminlayout2.css">
 <title>Online Mobile rechrage</title>
+
+<jsp:include page="fcn.jsp" />
 </head>
 <body>
 	<header>
@@ -40,13 +42,11 @@
 				<div class="carousel-inner">
 					<div class="carousel-item active">
 						<img class="d-block w-100" height="320px" width="1140px"
-							src="https://assetliteapi.banglalink.net/uploads/assetlite/images/slider-images/1q2SLMIeUSn5dFfLJtxeFSZRRmezIZFQm9Bf589M.jpeg"
-							alt="First slide">
+							src="../assets/images/bl.jpeg" alt="First slide">
 					</div>
 					<div class="carousel-item">
 						<img class="d-block w-100" height="320px" width="1140px"
-							src="http://www.teletalk.com.bd/storage/app/uploads/public/5fe/cd4/01d/5fecd401dd469394812204.jpg"
-							alt="Second slide">
+							src="../assets/images/ttlk.jpg" alt="Second slide">
 					</div>
 					<div class="carousel-item">
 						<img class="d-block w-100" height="320px" width="1140px"
@@ -67,78 +67,155 @@
 			<section class="app-download-section p-0">
 				<div class="container">
 					<div class="row justify-content-center">
-						<form class="form-group" method="post">
-							<!---->
-							<!---->
-							<div class="margin_setter"></div>
-							<div class="ng-invalid ng-touched ng-dirty">
-								<div class="">
-									<!---->
-									<label>Mobile Number</label>
-									<div class="form-group">
-										<input aria-multiline="false" autocapitalize="none"
-											autocorrect="off" class="form-control"
-											formcontrolname="phone" id="typeahead-basic" role="combobox"
-											type="text" placeholder="Mobile Number" maxlength="11"
-											autocomplete="off" aria-autocomplete="list"
-											aria-expanded="false">
-										<!---->
-
-									</div>
-									<br> <label class="select-label">Select Operator</label>
-									<div class="form-group">
-										<select class="form-control" formcontrolname="operator"
-											id="telecom-operator"><option value="">Select
-												Operator</option>
-											<option value="1">Grameenphone</option>
-											<option value="2">Banglalink</option>
-											<option value="3">Robi</option>
-											<option value="5">Teletalk</option>
-											<option value="6">Airtel</option></select>
-										<!---->
-
-										<!---->
-									</div>
-									<br> <label class="select-label">Select Connection
-										Type</label>
-									<div class="form-group">
-										<select class="form-control" formcontrolname="type"
-											id="connection-type"><option value="">Select
-												Connection Type</option>
-											<option value="prepaid">Prepaid</option>
-											<option value="postpaid">Postpaid</option>
-											<!---->
-											<option value="skitto">Skitto</option></select>
-										<!---->
-
-									</div>
-									<br> <label>Amount (TK)</label>
-									<div class="form-group">
-										<input class="form-control" formcontrolname="amount"
-											maxlength="4" minlength="2" type="number"
-											placeholder="Amount (TK)">
-										<!---->
-
-										<br>
-										<button class="btn btn-primary" name="button" type="submit">Recharge
-										</button>
-									</div>
-									
-								</div>
-							</div>
-
+						<form action="/recharge/add" method="post">
+							<input type="hidden" name="${_csrf.parameterName}"
+								value="${_csrf.token}" /> <label for="phone">Mobile
+								Number</label> <input class="form-control" type="text" name="phone"
+								id="phone"> <label for="operator" class="select-label">Select
+								Operator</label> <select class="form-control" name="operator"
+								id="operator">
+								<option value="">Select Operator</option>
+								<option value="Grameenphone">Grameenphone</option>
+								<option value="Banglalink">Banglalink</option>
+								<option value="Robi">Robi</option>
+								<option value="Teletalk">Teletalk</option>
+								<option value="Airtel">Airtel</option>
+							</select> <label for="simtype" class="select-label">Select
+								Connection Type</label> <select class="form-control"
+								formcontrolname="type" id="simtype" name="simtype">
+								<option value="">Select Connection Type</option>
+								<option value="prepaid">Prepaid</option>
+								<option value="postpaid">Postpaid</option>
+								<option value="skitto">Skitto</option>
+							</select> <label for="amount">Amount (TK)</label> <input
+								class="form-control" name="amount" id="amount" maxlength="4"
+								minlength="2" min="0" type="number" placeholder="Amount (TK)">
+							<button class="btn btn-primary" type="submit">Recharge</button>
 						</form>
 					</div>
 				</div>
 			</section>
 		</div>
 	</div>
+	<br>
+          <div id= "totalValue">Total price: $500 </div>
+          <br>
+          <input type="button" onclick="change(54,'Grameenphone','prepaid')" value="54 TK">
+          <input type="button" onclick="change(57,'Robi','postpaid')" value="57 TK">
+          <input type="button" onclick="location.href='/recharge',change(60,'Robi','prepaid')" value="60 TK">
+          <a href="/recharge" onclick="change(58,'Robi','postpaid')">58 TK</a>
+          <br><div class="row"><div class="col-sm-4">
+				<div class="card">
+					<div class="card-body">
+						<h5 class="card-title">90 Minutes 7 Days</h5>
+						<p class="card-text">
+							<i class="fa fa-calendar" aria-hidden="true"></i> 7 Days
+						</p>
+						<input type="button" onclick="change(57)" class="btn btn-primary" value="57 TK"/>
+					</div>
+				</div>
+		</div>
+		<div class="col-sm-4">
+				<div class="card">
+					<div class="card-body">
+						<h5 class="card-title">90 Minutes 7 Days</h5>
+						<p class="card-text">
+							<i class="fa fa-calendar" aria-hidden="true"></i> 7 Days
+						</p>
+						<input type="button" onclick="change(57)" class="btn btn-primary" value="57 TK"/>
+					</div>
+				</div>
+		</div>
+		<div class="col-sm-4">
+				<div class="card">
+					<div class="card-body">
+						<h5 class="card-title">90 Minutes 7 Days</h5>
+						<p class="card-text">
+							<i class="fa fa-calendar" aria-hidden="true"></i> 7 Days
+						</p>
+						<input type="button" onclick="change(57)" class="btn btn-primary" value="57 TK"/>
+					</div>
+				</div>
+		</div></div>
+          <div id="offerslide" class="carousel slide" data-ride="carousel">
+          
+  <div class="carousel-inner">
+    <div class="row carousel-item active">
+    	<div class="col-sm-4">
+				<div class="card">
+					<div class="card-body">
+						<h5 class="card-title">90 Minutes 7 Days</h5>
+						<p class="card-text">
+							<i class="fa fa-calendar" aria-hidden="true"></i> 7 Days
+						</p>
+						<input type="button" onclick="change(57)" class="btn btn-primary" value="57 TK"/>
+					</div>
+				</div>
+		</div>
+		<div class="col-sm-4">
+				<div class="card">
+					<div class="card-body">
+						<h5 class="card-title">90 Minutes 7 Days</h5>
+						<p class="card-text">
+							<i class="fa fa-calendar" aria-hidden="true"></i> 7 Days
+						</p>
+						<input type="button" onclick="change(57)" class="btn btn-primary" value="57 TK"/>
+					</div>
+				</div>
+		</div>
+		<div class="col-sm-4">
+				<div class="card">
+					<div class="card-body">
+						<h5 class="card-title">90 Minutes 7 Days</h5>
+						<p class="card-text">
+							<i class="fa fa-calendar" aria-hidden="true"></i> 7 Days
+						</p>
+						<input type="button" onclick="change(57)" class="btn btn-primary" value="57 TK"/>
+					</div>
+				</div>
+		</div>
+		
+	</div>
+    <div class="carousel-item">
+      <div class="card" style="width: 18rem;">
+					<div class="card-body">
+						<h5 class="card-title">30GB 7 Days</h5>
+						<p class="card-text">
+							<i class="fa fa-calendar" aria-hidden="true"></i> 7 Days
+						</p>
+						<a href="#" class="btn btn-primary">57 TK</a>
+					</div>
+				</div>
+    </div>
+    <div class="carousel-item">
+      <div class="card" style="width: 18rem;">
+					<div class="card-body">
+						<h5 class="card-title">30GB 30 Days</h5>
+						<p class="card-text">
+							<i class="fa fa-calendar" aria-hidden="true"></i> 7 Days
+						</p>
+						<a href="#" class="btn btn-primary">649 TK</a>
+					</div>
+				</div>
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#offerslide" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    
+  </a>
+  <a class="carousel-control-next" href="#offerslide" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    
+  </a>
+</div>
+         
 
 	<div class="footer-below">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
-					<p _ngcontent-serverapp-c9="">© recharge . All Rights Reserved.</p>
+					<p _ngcontent-serverapp-c9="">© My recharge . All Rights
+						Reserved.</p>
 				</div>
 			</div>
 		</div>

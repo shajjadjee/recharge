@@ -1,6 +1,8 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <title>Recharge Panel</title>
+<jsp:include page="fcn.jsp" />
 <jsp:include page="layout/header.jsp" />
+
 <div class="container">
 	<div class="row justify-content-center">
 	<div class="col-md-12">
@@ -12,7 +14,7 @@
 					<div class="alert alert-danger" role="alert">${message} <a href="/recharge">Go back</a></div>
 				</c:if>
 				</div>
-		<div class="col-sm-4">
+		<div class="col-sm-4 card">
 			<form action="/recharge/add" method="post">
 			<input type="hidden" name="${_csrf.parameterName}"
 						value="${_csrf.token}" />
@@ -20,7 +22,7 @@
 				<input class="form-control" type="text" name="phone" id="phone">
 				 <label for="operator" class="select-label">Select Operator</label> 
 				<select class="form-control" name="operator" id="operator">
-					<option value="">Select Operator</option>
+					<option value="<%=request.getParameter("operator")%>">Select Operator</option>
 					<option value="Grameenphone">Grameenphone</option>
 					<option value="Banglalink">Banglalink</option>
 					<option value="Robi">Robi</option>
@@ -35,10 +37,10 @@
 					</select>
 					 <label for="amount">Amount (TK)</label> <input
 					class="form-control" name="amount" id="amount" maxlength="4"
-					minlength="2" min="0" type="number" placeholder="Amount (TK)">
+					minlength="2" min="0" type="number" placeholder="Amount (TK)" value="<%=request.getParameter("amount")%>">
 					<button class="btn btn-primary" type="submit">Recharge</button>
 			</form>
-			
+          
 			<!-- Modal -->
 			<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
 				aria-labelledby="exampleModalLabel" aria-hidden="true">
