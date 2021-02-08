@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.mrc.auth.service.UserService;
 import com.mrc.model.Recharge;
@@ -41,14 +42,6 @@ public class RechargeController {
 		return new ModelAndView("recharge", map);
 	}
 	
-	@GetMapping("/my-today")
-	public ModelAndView myToday() {
-		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-		String username = userService.getCurrentUsername();	
-
-		Map<String, Object> map = recService.getByUsername(username);
-		return new ModelAndView("/my-today", map);
-	}
 	@GetMapping("/success")
 	public ModelAndView success() {
 		return new ModelAndView("success");
@@ -83,7 +76,7 @@ public class RechargeController {
 
 
 	@PostMapping("/add")
-	public ModelAndView add(HttpServletRequest req) {
+	public ModelAndView add(HttpServletRequest req, RedirectAttributes redir) {
 		Wallet wal= new Wallet();
 		Recharge recharge = new Recharge();
 		String username = userService.getCurrentUsername();	
@@ -95,8 +88,10 @@ public class RechargeController {
 		Double newam = 0.0;
 		if(bl>=amount) {
 			newam=bl-amount;
+			System.out.println("success");
+			
 		}else {
-			return new ModelAndView("/failed");
+			System.out.println("failed");
 		}
 		wal.setBalance(newam);
 		wal.setUsername(username);
@@ -113,6 +108,10 @@ public class RechargeController {
 		recharge.setCreatedDate(new Timestamp(System.currentTimeMillis()));
 
 		Map<String, Object> map = recService.save(recharge);
+		if (map!=null) {
+			redir.addFlashAttribute("flag","showAlert");
+			
+		}
 		System.out.println(newam);
 		 walService.save(wal);
 		return new ModelAndView("/recharge", map);

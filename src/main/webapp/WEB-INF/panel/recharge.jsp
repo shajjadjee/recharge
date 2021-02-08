@@ -1,18 +1,27 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+
 <title>Recharge Panel</title>
+<link rel="stylesheet" href="webjars/sweetalert2/7.28.10/dist/sweetalert2.min.css">
+<script src="webjars/sweetalert2/7.28.10/dist/sweetalert2.min.js"></script>
+<script src="webjars/jquery/3.3.1-1/jquery.min.js"></script>
 <jsp:include page="fcn.jsp" />
 <jsp:include page="layout/header.jsp" />
 
 <div class="container">
 	<div class="row justify-content-center">
 	<div class="col-md-12">
-				<c:if test='${status.equals("success")}'>
+				<!--<c:if test='${status.equals("success")}'>
 					<div class="alert alert-primary" role="alert">${message} <a href="/recharge">Go back</a></div>
 				</c:if>
 
 				<c:if test='${status.equals("error")}'>
 					<div class="alert alert-danger" role="alert">${message} <a href="/recharge">Go back</a></div>
-				</c:if>
+				</c:if>-->
+				
 				</div>
 		<div class="col-sm-4 card">
 			<form action="/recharge/add" method="post">
@@ -127,4 +136,11 @@
 	</div>
 
 </div>
+<script type="text/javascript">
+if('${flag}' == 'showAlert'){
+	 swal("Are you sure you want to do this?", {
+	 buttons: ["Oh noez!", true],
+	 });
+	}
+</script>
 <jsp:include page="layout/footer.jsp" />

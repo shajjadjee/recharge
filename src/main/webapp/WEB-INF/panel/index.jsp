@@ -6,6 +6,12 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
+<link rel="stylesheet" href="../assets/css/owl.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
 	integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
@@ -25,7 +31,7 @@
 		<div class="header">
 			<nav class="navbar navbar-default navbar-fixed-top affix-top">
 				<div class="navbar-header page-scroll">
-					<a class="navbar-brand" href="/recharge/top-up"><img
+					<a class="navbar-brand" href="/"><img
 						class="hide-in-sticky" src="../assets/images/logo.png"></a>
 				</div>
 				<a class="navbar-brand" href="/recharge">Recharge</a> <a
@@ -64,208 +70,157 @@
 					class="sr-only">Next</span>
 				</a>
 			</div>
-			<br> <br>
-			<section class="app-download-section p-0">
-				<div class="container">
-					<div class="row justify-content-center">
-						<form action="/recharge/add" method="post">
-							<input type="hidden" name="${_csrf.parameterName}"
-								value="${_csrf.token}" /> <label for="phone">Mobile
-								Number</label> <input class="form-control" type="text" name="phone"
-								id="phone"> <label for="operator" class="select-label">Select
-								Operator</label> <select class="form-control" name="operator"
-								id="operator">
-								<option value="">Select Operator</option>
-								<option value="Grameenphone">Grameenphone</option>
-								<option value="Banglalink">Banglalink</option>
-								<option value="Robi">Robi</option>
-								<option value="Teletalk">Teletalk</option>
-								<option value="Airtel">Airtel</option>
-							</select> <label for="simtype" class="select-label">Select
-								Connection Type</label> <select class="form-control"
-								formcontrolname="type" id="simtype" name="simtype">
-								<option value="">Select Connection Type</option>
-								<option value="prepaid">Prepaid</option>
-								<option value="postpaid">Postpaid</option>
-								<option value="skitto">Skitto</option>
-							</select> <label for="amount">Amount (TK)</label> <input
-								class="form-control" name="amount" id="amount" maxlength="4"
-								minlength="2" min="0" type="number" placeholder="Amount (TK)">
-							<button class="btn btn-primary" type="submit">Recharge</button>
-						</form>
-					</div>
-				</div>
-			</section>
 		</div>
-
-		<br> <input type="button"
-			onclick="change(54,'Grameenphone','prepaid')" value="54 TK">
-		<input type="button" onclick="change(57,'Robi','postpaid')"
-			value="57 TK"> <input type="button"
-			onclick="location.href='/recharge',change(60,'Robi','prepaid')"
-			value="60 TK"> <a href="/recharge"
-			onclick="change(58,'Robi','postpaid')">58 TK</a> <br>
-		<div class="row">
-			<div class="col-sm-4">
-				<div class="card">
-					<div class="card-body">
-						<h5 class="card-title">90 Minutes 7 Days</h5>
-						<p class="card-text">
-							<i class="fa fa-calendar" aria-hidden="true"></i> 7 Days
-						</p>
-						<input type="button" onclick="change(57)" class="btn btn-primary"
-							value="57 TK" />
+	</div>
+	<div class="container">
+		<br> <br>
+		<div class="card mt-2">
+			<div class="card-body" style="background-color: rgb(255, 60, 65)">
+				<form class="form-inline" action="/recharge/add" method="post">
+					<input type="hidden" name="${_csrf.parameterName}"
+						value="${_csrf.token}" />
+					<div class="form-group mr-2">
+						<label for="phone"></label> <input class="form-control"
+							type="text" name="phone" id="phone" placeholder="Mobile Number">
 					</div>
-				</div>
+					<div class="form-group mr-2">
+						<label for="operator" class="select-label"></label> <select
+							class="form-control" name="operator" id="operator">
+							<option value="">Select your Operator</option>
+							<option value="Grameenphone">Grameenphone</option>
+							<option value="Banglalink">Banglalink</option>
+							<option value="Robi">Robi</option>
+							<option value="Teletalk">Teletalk</option>
+							<option value="Airtel">Airtel</option>
+						</select>
+					</div>
+					<div class="form-group mr-2">
+						<label for="simtype" class="select-label"></label> <select
+							class="form-control" formcontrolname="type" id="simtype"
+							name="simtype">
+							<option value="">Select Connection Type</option>
+							<option value="prepaid">Prepaid</option>
+							<option value="postpaid">Postpaid</option>
+							<option value="skitto">Skitto</option>
+						</select>
+					</div>
+					<div class="form-group mr-2">
+						<label for="amount"></label> <input class="form-control"
+							name="amount" id="amount" maxlength="4" minlength="2" min="0"
+							type="number" placeholder="Amount (TK)">
+					</div>
+					<div class="form-group">
+						<button class="btn btn-primary btn-block" type="submit">Recharge</button>
+					</div>
+				</form>
 			</div>
-			<div class="col-sm-4">
-				<div class="card">
-					<div class="card-body">
-						<h5 class="card-title">90 Minutes 7 Days</h5>
-						<p class="card-text">
-							<i class="fa fa-calendar" aria-hidden="true"></i> 7 Days
-						</p>
-						<input type="button" onclick="change(57)" class="btn btn-primary"
-							value="57 TK" />
-					</div>
-				</div>
-			</div>
-			<div class="col-sm-4">
-				<div class="card">
-					<div class="card-body">
-						<h5 class="card-title">90 Minutes 7 Days</h5>
-						<p class="card-text">
-							<i class="fa fa-calendar" aria-hidden="true"></i> 7 Days
-						</p>
-						<input type="button" onclick="change(57)" class="btn btn-primary"
-							value="57 TK" />
-					</div>
-				</div>
-			</div>
-		</div>
-		<div id="offerslide" class="row carousel slide" data-ride="carousel">
-
-			<div class="col-sm-12 carousel-inner">
-				<div class="col-sm-4 carousel-item active">
-
-					<div class="card">
-						<div class="card-body">
-							<h5 class="card-title">90 Minutes 7 Days</h5>
-							<p class="card-text">
-								<i class="fa fa-calendar" aria-hidden="true"></i> 7 Days
-							</p>
-							<input type="button" onclick="change(57)" class="btn btn-primary"
-								value="57 TK" />
-						</div>
-					</div>
-
-				</div>
-				<div class="col-sm-4 carousel-item">
-					<div class="card">
-						<div class="card-body">
-							<h5 class="card-title">30GB 7 Days</h5>
-							<p class="card-text">
-								<i class="fa fa-calendar" aria-hidden="true"></i> 7 Days
-							</p>
-							<a href="#" class="btn btn-primary">57 TK</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-sm-4 carousel-item">
-					<div class="card">
-						<div class="card-body">
-							<h5 class="card-title">30GB 30 Days</h5>
-							<p class="card-text">
-								<i class="fa fa-calendar" aria-hidden="true"></i> 7 Days
-							</p>
-							<a href="#" class="btn btn-primary">649 TK</a>
-						</div>
-					</div>
-				</div>
-			</div>
-			<a class="carousel-control-prev" href="#offerslide" role="button"
-				data-slide="prev"> <span class="carousel-control-prev-icon"
-				aria-hidden="true"></span>
-
-			</a> <a class="carousel-control-next" href="#offerslide" role="button"
-				data-slide="next"> <span class="carousel-control-next-icon"
-				aria-hidden="true"></span>
-
-			</a>
 		</div>
 	</div>
 
-		<div id="owl-demo" class="owl-carousel owl-theme">
-			<div class="item">
-				<h1>1</h1>
+	<br>
+
+	<div class="wrapper">
+		<div class="carousel1 owl-carousel">
+			<div class="card">
+				<div class="card-body">
+					<h5 class="card-title"><i class="fas fa-phone-alt"></i> 90 Minutes <i class="fas fa-calendar-day"></i> 7 Days</h5>
+					<div class="card-text" style="float: left;">
+						<i class="fas fa-calendar-day"></i> 7 Days
+					</div>
+					<input type="button" onclick="change(57,'Robi','postpaid')" class="btn btn-primary"
+						value="TK. 57" style="float: right;" />
+				</div>
 			</div>
-			<div class="item">
-				<h1>2</h1>
+			<div class="card">
+				<div class="card-body">
+					<h5 class="card-title"><i class="fas fa-phone-alt"></i> 50 Minutes <i class="fas fa-calendar-day"></i> 7 Days</h5>
+					<div class="card-text" style="float: left;">
+						<i class="fa fa-calendar" aria-hidden="true"></i> 7 Days
+					</div>
+					<input type="button" onclick="change(54,'Grameenphone','prepaid')" class="btn btn-primary"
+						value="TK. 54" style="float: right;" />
+				</div>
 			</div>
-			<div class="item">
-				<h1>3</h1>
+			<div class="card">
+				<div class="card-body">
+					<h5 class="card-title"><i class="fas fa-globe-asia"></i> 30 GB FOR <i class="fas fa-calendar-day"></i> 30 days</h5>
+					<div class="card-text" style="float: left;">
+						<i class="fa fa-calendar" aria-hidden="true"></i> 30 Days
+					</div>
+					<input type="button" onclick="change(344,'Airtel','prepaid')" class="btn btn-primary"
+						value="TK. 344" style="float: right;"/>
+				</div>
 			</div>
-			<div class="item">
-				<h1>4</h1>
+			<div class="card">
+				<div class="card-body">
+					<h5 class="card-title">90 Minutes <i class="fas fa-calendar-day"></i> 7 Days</h5>
+					<div class="card-text" style="float: left;">
+						<i class="fa fa-calendar" aria-hidden="true"></i> 7 Days
+					</div>
+					<input type="button" onclick="change(57)" class="btn btn-primary"
+						value="57 TK" style="float: right;" />
+				</div>
 			</div>
-			<div class="item">
-				<h1>5</h1>
+			<div class="card">
+				<div class="card-body">
+					<h5 class="card-title">90 Minutes <i class="fas fa-calendar-day"></i> 7 Days</h5>
+					<div class="card-text" style="float: left;">
+						<i class="fa fa-calendar" aria-hidden="true"></i> 7 Days
+					</div>
+					<input type="button" onclick="change(57)" class="btn btn-primary"
+						value="57 TK" style="float: right;" />
+				</div>
 			</div>
-			<div class="item">
-				<h1>6</h1>
+			<div class="card">
+				<div class="card-body">
+					<h5 class="card-title">90 Minutes <i class="fas fa-calendar-day"></i> 7 Days</h5>
+					<div class="card-text" style="float: left;">
+						<i class="fa fa-calendar" aria-hidden="true"></i> 7 Days
+					</div>
+					<input type="button" onclick="change(57)" class="btn btn-primary"
+						value="57 TK" style="float: right;" />
+				</div>
 			</div>
-			<div class="item">
-				<h1>7</h1>
-			</div>
-			<div class="item">
-				<h1>8</h1>
-			</div>
-			<div class="item">
-				<h1>9</h1>
-			</div>
-			<div class="item">
-				<h1>10</h1>
-			</div>
-			<div class="item">
-				<h1>11</h1>
-			</div>
-			<div class="item">
-				<h1>12</h1>
-			</div>
-			<div class="item">
-				<h1>13</h1>
-			</div>
-			<div class="item">
-				<h1>14</h1>
-			</div>
-			<div class="item">
-				<h1>15</h1>
-			</div>
-			<div class="item">
-				<h1>16</h1>
-			</div>
+			
 		</div>
+	</div>
+	
 
-		<div class="customNavigation">
-			<a class="btn prev">Previous</a> <a class="btn next">Next</a> <a
-				class="btn play">Autoplay</a> <a class="btn stop">Stop</a>
-		</div>
-
-
-
-	<div class="footer-below">
+	<div class="footer-below"
+		style="padding: 17px 0; background-color: #043acc; color: white;">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
-					<p _ngcontent-serverapp-c9="">© My recharge . All Rights
-						Reserved.</p>
+					<p>© My recharge . All Rights Reserved.</p>
 				</div>
 			</div>
 		</div>
 	</div>
-	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-		crossorigin="anonymous"></script>
+	<script>
+		$(".carousel1").owlCarousel({
+			margin : 20,
+			loop : true,
+			autoplay : true,
+			autoplayTimeout : 2000,
+			autoplayHoverPause : true,
+			responsive : {
+				0 : {
+					items : 1,
+					nav : true
+				},
+				600 : {
+					items : 2,
+					nav : false
+				},
+				1000 : {
+					items : 3,
+					nav : false
+				}
+				
+			}
+		});
+	</script>
+
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"

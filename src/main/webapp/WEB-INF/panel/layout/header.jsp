@@ -1,10 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1" isELIgnored="false"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
+
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
 	integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
@@ -14,7 +11,7 @@
 	integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
 	crossorigin="anonymous" />
 <link rel="stylesheet" href="../assets/css/adminlayout.css">
-<title>Insert title here</title>
+<title>Dashboard</title>
 </head>
 <body>
 	<header>
@@ -22,8 +19,8 @@
 			<nav
 				class="navbar navbar-dark sticky-top text-info flex-md-nowrap p-0 shadow "
 				pcoded-header-position="fixed">
-				<a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="#">
-					Portal Area</a>
+				<a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="/deshboard">
+					User Dashboard</a>
 				<button class="navbar-toggler position-absolute d-md-none collapsed"
 					type="button" data-toggle="collapse" data-target="#sidebarMenu"
 					aria-controls="sidebarMenu" aria-expanded="false"
@@ -62,7 +59,7 @@
 									aria-hidden="true"></i>
 							</span> Wallet
 						</a></li>
-						<li class="nav-item"><a class="nav-link" href="${contextPath}/deshboard/logout"><i
+						<li class="nav-item"><a class="nav-link" href="${contextPath}/logout"><i
 								class="fa fa-sign-out" aria-hidden="true"></i> Sign out</a></li>
 
 					</ul>

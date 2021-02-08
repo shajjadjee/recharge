@@ -15,16 +15,51 @@
   <body>
     <div class="wrapper">
       <div class="carousel owl-carousel">
-        <div class="card card-1">
-A</div>
-<div class="card card-2">
-B</div>
-<div class="card card-3">
-C</div>
-<div class="card card-4">
-D</div>
-<div class="card card-5">
-E</div>
+        <div class="card">
+<div class="card-body">
+						<h5 class="card-title">90 Minutes 7 Days</h5>
+						<p class="card-text">
+							<i class="fa fa-calendar" aria-hidden="true"></i> 7 Days
+						</p>
+						<input type="button" onclick="change(57)" class="btn btn-primary"
+							value="57 TK" />
+					</div></div>
+<div class="card">
+<div class="card-body">
+						<h5 class="card-title">90 Minutes 7 Days</h5>
+						<p class="card-text">
+							<i class="fa fa-calendar" aria-hidden="true"></i> 7 Days
+						</p>
+						<input type="button" onclick="change(57)" class="btn btn-primary"
+							value="57 TK" />
+					</div></div>
+<div class="card">
+<div class="card-body">
+						<h5 class="card-title">90 Minutes 7 Days</h5>
+						<p class="card-text">
+							<i class="fa fa-calendar" aria-hidden="true"></i> 7 Days
+						</p>
+						<input type="button" onclick="change(57)" class="btn btn-primary"
+							value="57 TK" />
+					</div></div>
+<div class="card">
+<div class="card-body">
+						<h5 class="card-title">90 Minutes 7 Days</h5>
+						<p class="card-text">
+							<i class="fa fa-calendar" aria-hidden="true"></i> 7 Days
+						</p>
+						<input type="button" onclick="change(57)" class="btn btn-primary"
+							value="57 TK" />
+					</div></div>
+<div class="card">
+<div class="card-body">
+						<h5 class="card-title">90 Minutes 7 Days</h5>
+						<p class="card-text">
+							<i class="fa fa-calendar" aria-hidden="true"></i> 7 Days
+						</p>
+						<input type="button" onclick="change(57)" class="btn btn-primary"
+							value="57 TK" />
+					</div></div>
 </div>
 </div>
 <script>
