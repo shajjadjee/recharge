@@ -75,7 +75,7 @@
 	<div class="container">
 		<br> <br>
 		<div class="card mt-2">
-			<div class="card-body" style="background-color: rgb(255, 60, 65)">
+			<div class="card-body" style="background-color: rgba(153, 219, 231, 0.5)">
 				<form class="form-inline" action="/recharge/add" method="post">
 					<input type="hidden" name="${_csrf.parameterName}"
 						value="${_csrf.token}" />

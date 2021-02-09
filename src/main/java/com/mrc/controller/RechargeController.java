@@ -87,11 +87,9 @@ public class RechargeController {
 		Double bl = walService.findBlUsername(username);
 		Double newam = 0.0;
 		if(bl>=amount) {
-			newam=bl-amount;
-			System.out.println("success");
-			
+			newam=bl-amount;	
 		}else {
-			System.out.println("failed");
+			return new ModelAndView("failed");
 		}
 		wal.setBalance(newam);
 		wal.setUsername(username);

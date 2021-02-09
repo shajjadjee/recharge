@@ -14,13 +14,13 @@
 <div class="container">
 	<div class="row justify-content-center">
 	<div class="col-md-12">
-				<!--<c:if test='${status.equals("success")}'>
+				<c:if test='${status.equals("success")}'>
 					<div class="alert alert-primary" role="alert">${message} <a href="/recharge">Go back</a></div>
 				</c:if>
 
 				<c:if test='${status.equals("error")}'>
 					<div class="alert alert-danger" role="alert">${message} <a href="/recharge">Go back</a></div>
-				</c:if>-->
+				</c:if>
 				
 				</div>
 		<div class="col-sm-4 card">
