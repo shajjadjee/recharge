@@ -3,10 +3,14 @@ package com.mrc.auth.model;
 import java.util.List;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinTable;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
@@ -24,9 +28,11 @@ public class User {
 	private String gender;
 	private String phone;
 	private String address;
-	
-	
-	@ManyToMany
+	@ManyToMany(fetch = FetchType.EAGER,cascade=CascadeType.MERGE)
+    @JoinTable(
+       name="user_role",
+       joinColumns={@JoinColumn(name="USER_ID", referencedColumnName="ID")},
+       inverseJoinColumns={@JoinColumn(name="ROLE_ID", referencedColumnName="ID")})
     private List<Role> roles;
 	
 	public long getId() {

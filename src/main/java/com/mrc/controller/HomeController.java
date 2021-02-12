@@ -20,4 +20,8 @@ public class HomeController {
 	public ModelAndView deshboard() {
 		return new ModelAndView("deshboard");
 	}
+	@GetMapping("/admin")
+	public ModelAndView admin() {
+		return new ModelAndView("deshboard");
+	}
 }

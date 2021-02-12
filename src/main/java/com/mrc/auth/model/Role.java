@@ -1,8 +1,10 @@
 package com.mrc.auth.model;
 
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -10,7 +12,7 @@ import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "role")
+@Table(name = "roles")
 public class Role {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,10 +20,21 @@ public class Role {
 
     private String name;
 
-    @ManyToMany(mappedBy = "roles")
-    private Set<User> users;
+    @ManyToMany(fetch = FetchType.EAGER, mappedBy = "roles")
+    private List<User> users;
 
-    public Long getId() {
+   
+
+	public Role() {
+		super();
+	}
+
+	public Role(String name) {
+		super();
+		this.name = name;
+	}
+
+	public Long getId() {
         return id;
     }
 
@@ -37,11 +50,13 @@ public class Role {
         this.name = name;
     }
 
-    public Set<User> getUsers() {
-        return users;
-    }
+	public List<User> getUsers() {
+		return users;
+	}
 
-    public void setUsers(Set<User> users) {
-        this.users = users;
-    }
+	public void setUsers(List<User> users) {
+		this.users = users;
+	}
+
+   
 }

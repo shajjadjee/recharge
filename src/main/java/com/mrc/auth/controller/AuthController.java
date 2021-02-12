@@ -1,4 +1,6 @@
 package com.mrc.auth.controller;
+import java.util.Arrays;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import com.mrc.auth.model.Role;
 import com.mrc.auth.model.User;
 import com.mrc.auth.service.SecurityService;
 import com.mrc.auth.service.UserService;

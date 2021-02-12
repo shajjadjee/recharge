@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1" isELIgnored="false"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="sec"
+	uri="http://www.springframework.org/security/tags"%>
 
 <!DOCTYPE html>
 <html>
@@ -9,7 +11,8 @@
 <link rel="stylesheet" href="../assets/css/owl.css">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
 <link rel="stylesheet"
@@ -31,13 +34,20 @@
 		<div class="header">
 			<nav class="navbar navbar-default navbar-fixed-top affix-top">
 				<div class="navbar-header page-scroll">
-					<a class="navbar-brand" href="/"><img
-						class="hide-in-sticky" src="../assets/images/logo.png"></a>
+					<a class="navbar-brand" href="/"><img class="hide-in-sticky"
+						src="../assets/images/logo.png"></a>
 				</div>
 				<a class="navbar-brand" href="/recharge">Recharge</a> <a
 					class="navbar-brand" href="#">Operators</a> <a class="navbar-brand"
-					href="#">Pricing</a> <a class="btn btn-primary" href="login"
+					href="#">Pricing</a>
+					<sec:authorize access="!isAuthenticated()">
+				 <a class="btn btn-primary" href="login"
 					style="margin-top: 3px;"> SIGN IN </a>
+					</sec:authorize>
+					<sec:authorize access="isAuthenticated()">
+				 <a class="btn btn-primary" href="logout"
+					style="margin-top: 3px;"> SIGN OUT </a>
+					</sec:authorize>
 			</nav>
 			<nav class="navbar bg-primary navbar-fixed-top affix-top"></nav>
 		</div>
@@ -75,7 +85,8 @@
 	<div class="container">
 		<br> <br>
 		<div class="card mt-2">
-			<div class="card-body" style="background-color: rgba(153, 219, 231, 0.5)">
+			<div class="card-body"
+				style="background-color: rgba(153, 219, 231, 0.5)">
 				<form class="form-inline" action="/recharge/add" method="post">
 					<input type="hidden" name="${_csrf.parameterName}"
 						value="${_csrf.token}" />
@@ -123,37 +134,48 @@
 		<div class="carousel1 owl-carousel">
 			<div class="card">
 				<div class="card-body">
-					<h5 class="card-title"><i class="fas fa-phone-alt"></i> 90 Minutes <i class="fas fa-calendar-day"></i> 7 Days</h5>
+					<h5 class="card-title">
+						<i class="fas fa-phone-alt"></i> 90 Minutes <i
+							class="fas fa-calendar-day"></i> 7 Days
+					</h5>
 					<div class="card-text" style="float: left;">
 						<i class="fas fa-calendar-day"></i> 7 Days
 					</div>
-					<input type="button" onclick="change(57,'Robi','postpaid')" class="btn btn-primary"
-						value="TK. 57" style="float: right;" />
+					<input type="button" onclick="change(57,'Robi','postpaid')"
+						class="btn btn-primary" value="TK. 57" style="float: right;" />
 				</div>
 			</div>
 			<div class="card">
 				<div class="card-body">
-					<h5 class="card-title"><i class="fas fa-phone-alt"></i> 50 Minutes <i class="fas fa-calendar-day"></i> 7 Days</h5>
+					<h5 class="card-title">
+						<i class="fas fa-phone-alt"></i> 50 Minutes <i
+							class="fas fa-calendar-day"></i> 7 Days
+					</h5>
 					<div class="card-text" style="float: left;">
 						<i class="fa fa-calendar" aria-hidden="true"></i> 7 Days
 					</div>
-					<input type="button" onclick="change(54,'Grameenphone','prepaid')" class="btn btn-primary"
-						value="TK. 54" style="float: right;" />
+					<input type="button" onclick="change(54,'Grameenphone','prepaid')"
+						class="btn btn-primary" value="TK. 54" style="float: right;" />
 				</div>
 			</div>
 			<div class="card">
 				<div class="card-body">
-					<h5 class="card-title"><i class="fas fa-globe-asia"></i> 30 GB FOR <i class="fas fa-calendar-day"></i> 30 days</h5>
+					<h5 class="card-title">
+						<i class="fas fa-globe-asia"></i> 30 GB FOR <i
+							class="fas fa-calendar-day"></i> 30 days
+					</h5>
 					<div class="card-text" style="float: left;">
 						<i class="fa fa-calendar" aria-hidden="true"></i> 30 Days
 					</div>
-					<input type="button" onclick="change(344,'Airtel','prepaid')" class="btn btn-primary"
-						value="TK. 344" style="float: right;"/>
+					<input type="button" onclick="change(344,'Airtel','prepaid')"
+						class="btn btn-primary" value="TK. 344" style="float: right;" />
 				</div>
 			</div>
 			<div class="card">
 				<div class="card-body">
-					<h5 class="card-title">90 Minutes <i class="fas fa-calendar-day"></i> 7 Days</h5>
+					<h5 class="card-title">
+						90 Minutes <i class="fas fa-calendar-day"></i> 7 Days
+					</h5>
 					<div class="card-text" style="float: left;">
 						<i class="fa fa-calendar" aria-hidden="true"></i> 7 Days
 					</div>
@@ -163,7 +185,9 @@
 			</div>
 			<div class="card">
 				<div class="card-body">
-					<h5 class="card-title">90 Minutes <i class="fas fa-calendar-day"></i> 7 Days</h5>
+					<h5 class="card-title">
+						90 Minutes <i class="fas fa-calendar-day"></i> 7 Days
+					</h5>
 					<div class="card-text" style="float: left;">
 						<i class="fa fa-calendar" aria-hidden="true"></i> 7 Days
 					</div>
@@ -173,7 +197,9 @@
 			</div>
 			<div class="card">
 				<div class="card-body">
-					<h5 class="card-title">90 Minutes <i class="fas fa-calendar-day"></i> 7 Days</h5>
+					<h5 class="card-title">
+						90 Minutes <i class="fas fa-calendar-day"></i> 7 Days
+					</h5>
 					<div class="card-text" style="float: left;">
 						<i class="fa fa-calendar" aria-hidden="true"></i> 7 Days
 					</div>
@@ -181,10 +207,10 @@
 						value="57 TK" style="float: right;" />
 				</div>
 			</div>
-			
+
 		</div>
 	</div>
-	
+
 
 	<div class="footer-below"
 		style="padding: 17px 0; background-color: #043acc; color: white;">
@@ -216,7 +242,7 @@
 					items : 3,
 					nav : false
 				}
-				
+
 			}
 		});
 	</script>

@@ -29,13 +29,15 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http
             .authorizeRequests()
                 .antMatchers("/","/index2","/assets/**", "/signup").permitAll()
+                .antMatchers("/admin/**").hasRole("ADMIN")
                 .anyRequest().authenticated()
                 .and()
             .formLogin()
                 .loginPage("/login")
                 .permitAll()
                 .and()
-            .logout();
+            .logout()
+            .logoutSuccessUrl("/");
     }
 
 	@Bean
