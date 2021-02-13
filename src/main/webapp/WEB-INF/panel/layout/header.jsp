@@ -15,9 +15,9 @@
 </head>
 <body>
 	<header>
-		<div class="header">
+		<div class="header" style="background-color: #043acc; color: white;text-align: center;">
 			<nav
-				class="navbar navbar-dark sticky-top text-info flex-md-nowrap p-0 shadow "
+				class="navbar navbar-dark sticky-top flex-md-nowrap p-0 shadow "
 				pcoded-header-position="fixed">
 				<a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="/deshboard">
 					User Dashboard</a>
@@ -27,12 +27,12 @@
 					aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
-				<a style="color: blue;" class="nav-link" href="/wallet"> <i
+				<a style="color: white;" class="nav-link" href="/wallet"> <i
 					class="fa fa-wallet" aria-hidden="true"></i> Wallet ${blnc} tk</a>
 
 				<ul class="navbar-nav px-3">
 					<li class="nav-item"></li>
-					<li class="nav-item text-nowrap"><a style="color: blue;"
+					<li class="nav-item text-nowrap"><a style="color: white;"
 						class="nav-link" href="${contextPath}/logout"><i class="fa fa-sign-out" aria-hidden="true"></i>
 							Sign out</a></li>
 				</ul>
@@ -58,6 +58,10 @@
 								<span data-feather="file"> <i class="fa fa-wallet"
 									aria-hidden="true"></i>
 							</span> Wallet
+						</a></li>
+						<li class="nav-item"><a class="nav-link" href="/comments">
+								<span data-feather="file"> <i class="fas fa-comment"></i>
+							</span> Comment
 						</a></li>
 						<li class="nav-item"><a class="nav-link" href="${contextPath}/logout"><i
 								class="fa fa-sign-out" aria-hidden="true"></i> Sign out</a></li>

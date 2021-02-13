@@ -7,6 +7,9 @@ body {
 	height: 16px;
 	vertical-align: text-bottom;
 }
+.nav-link{
+	color: white;
+}
 
 /*
    * Sidebar
@@ -201,4 +204,11 @@ body {
     font-size: 32px;
     color: #fff;
     text-align: right;
+}
+.footer-below{
+	padding: 17px 0; 
+	background-color: #043acc; 
+	color: white;
+	text-align: center;
+	font-size: 20px;
 }

@@ -40,14 +40,14 @@
 				<a class="navbar-brand" href="/recharge">Recharge</a> <a
 					class="navbar-brand" href="#">Operators</a> <a class="navbar-brand"
 					href="#">Pricing</a>
-					<sec:authorize access="!isAuthenticated()">
-				 <a class="btn btn-primary" href="login"
-					style="margin-top: 3px;"> SIGN IN </a>
-					</sec:authorize>
-					<sec:authorize access="isAuthenticated()">
-				 <a class="btn btn-primary" href="logout"
-					style="margin-top: 3px;"> SIGN OUT </a>
-					</sec:authorize>
+				<sec:authorize access="!isAuthenticated()">
+					<a class="btn btn-primary" href="login" style="margin-top: 3px;">
+						SIGN IN </a>
+				</sec:authorize>
+				<sec:authorize access="isAuthenticated()">
+					<a class="btn btn-primary" href="logout" style="margin-top: 3px;">
+						SIGN OUT </a>
+				</sec:authorize>
 			</nav>
 			<nav class="navbar bg-primary navbar-fixed-top affix-top"></nav>
 		</div>
@@ -164,8 +164,9 @@
 						<i class="fas fa-globe-asia"></i> 30 GB FOR <i
 							class="fas fa-calendar-day"></i> 30 days
 					</h5>
-					<div class="card-text" style="float: left;">
-						<i class="fa fa-calendar" aria-hidden="true"></i> 30 Days
+					<div class="card-text"><i
+							class="fas fa-calendar-day"></i> 30 days
+					<img src="../assets/images/airtel.png" height="25px" width="25px"/>
 					</div>
 					<input type="button" onclick="change(344,'Airtel','prepaid')"
 						class="btn btn-primary" value="TK. 344" style="float: right;" />
@@ -208,6 +209,22 @@
 				</div>
 			</div>
 
+		</div>
+	</div>
+	<div class="wrapper">
+		<div class="carousel1 owl-carousel">
+		<c:forEach var="comments" items="${entityList}">
+			<div class="card" style="background-color: #2ed8b6;color: white">
+				<div class="card-body">
+					<h5 class="card-title">
+						<i class="fas fa-user"></i> ${comments.username}
+					</h5>
+					<div class="card-text" style="float: left;">
+						<i class="fas fa-comment"></i> ${comments.description}
+					</div>
+				</div>
+			</div>
+			</c:forEach>
 		</div>
 	</div>
 
