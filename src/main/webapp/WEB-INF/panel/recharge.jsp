@@ -10,7 +10,7 @@
 <script src="webjars/jquery/3.3.1-1/jquery.min.js"></script>
 <jsp:include page="fcn.jsp" />
 <jsp:include page="layout/header.jsp" />
-
+<br>
 <div class="container">
 	<div class="row justify-content-center">
 	<div class="col-md-12">
@@ -23,6 +23,7 @@
 				</c:if>
 				
 				</div>
+				<br>
 		<div class="col-sm-4 card">
 			<form action="/recharge/add" method="post">
 			<input type="hidden" name="${_csrf.parameterName}"
@@ -49,7 +50,7 @@
 					minlength="2" min="0" type="number" placeholder="Amount (TK)" value="<%=request.getParameter("amount")%>">
 					<button class="btn btn-primary" type="submit">Recharge</button>
 			</form>
-          
+          <br>
 			<!-- Modal -->
 			<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
 				aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -103,6 +104,7 @@
 		</div>
 
 	</div>
+	<br>
 	<div class="row">
 		<div class="col-md-12">
 			<table class="table">
