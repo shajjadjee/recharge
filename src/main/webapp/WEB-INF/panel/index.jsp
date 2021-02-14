@@ -134,84 +134,83 @@
 		<div class="carousel1 owl-carousel">
 			<div class="card">
 				<div class="card-body">
-					<h5 class="card-title">
+				<div class="card-text" style="width: 25px">
+					<img src="../assets/images/RB.png" height="25px"/>
+					</div><br>
+					<h5 class="card-title" style="float: left;">
 						<i class="fas fa-phone-alt"></i> 90 Minutes <i
 							class="fas fa-calendar-day"></i> 7 Days
 					</h5>
-					<div class="card-text" style="float: left;">
-						<i class="fas fa-calendar-day"></i> 7 Days
-					</div>
 					<input type="button" onclick="change(57,'Robi','postpaid')"
 						class="btn btn-primary" value="TK. 57" style="float: right;" />
 				</div>
 			</div>
 			<div class="card">
-				<div class="card-body">
-					<h5 class="card-title">
+				<div class="card-body"><div class="card-text" style="width: 25px">
+					<img src="../assets/images/GP.png" height="25px"/>
+					</div><br>
+					<h5 class="card-title" style="float: left;">
 						<i class="fas fa-phone-alt"></i> 50 Minutes <i
 							class="fas fa-calendar-day"></i> 7 Days
 					</h5>
-					<div class="card-text" style="float: left;">
-						<i class="fa fa-calendar" aria-hidden="true"></i> 7 Days
-					</div>
 					<input type="button" onclick="change(54,'Grameenphone','prepaid')"
 						class="btn btn-primary" value="TK. 54" style="float: right;" />
 				</div>
 			</div>
 			<div class="card">
 				<div class="card-body">
-					<h5 class="card-title">
+				<div class="card-text" style="width: 25px">
+					<img src="../assets/images/airtel.png" height="25px"/>
+					</div><br>
+					<h5 class="card-title" style="float: left;">
 						<i class="fas fa-globe-asia"></i> 30 GB FOR <i
 							class="fas fa-calendar-day"></i> 30 days
 					</h5>
-					<div class="card-text"><i
-							class="fas fa-calendar-day"></i> 30 days
-					<img src="../assets/images/airtel.png" height="25px" width="25px"/>
-					</div>
 					<input type="button" onclick="change(344,'Airtel','prepaid')"
 						class="btn btn-primary" value="TK. 344" style="float: right;" />
 				</div>
 			</div>
 			<div class="card">
 				<div class="card-body">
-					<h5 class="card-title">
-						90 Minutes <i class="fas fa-calendar-day"></i> 7 Days
+					<div class="card-text" style="width: 25px">
+					<img src="../assets/images/TT.png" height="25px"/>
+					</div><br>
+					<h5 class="card-title" style="float: left;">
+						<i class="fas fa-phone-alt"></i>60 Minutes <i class="fas fa-calendar-day"></i> 15 Days
 					</h5>
-					<div class="card-text" style="float: left;">
-						<i class="fa fa-calendar" aria-hidden="true"></i> 7 Days
-					</div>
-					<input type="button" onclick="change(57)" class="btn btn-primary"
-						value="57 TK" style="float: right;" />
+					<input type="button" onclick="change(45,'Teletalk','prepaid')" class="btn btn-primary"
+						value="45 TK" style="float: right;" />
 				</div>
 			</div>
 			<div class="card">
 				<div class="card-body">
-					<h5 class="card-title">
-						90 Minutes <i class="fas fa-calendar-day"></i> 7 Days
+					<div class="card-text" style="width: 25px">
+					<img src="../assets/images/BL.png" height="25px"/>
+					</div><br>
+					<h5 class="card-title" style="float: left;">
+						<i class="fas fa-phone-alt"></i>90 Minutes <i class="fas fa-calendar-day"></i> 21 Days
 					</h5>
-					<div class="card-text" style="float: left;">
-						<i class="fa fa-calendar" aria-hidden="true"></i> 7 Days
-					</div>
-					<input type="button" onclick="change(57)" class="btn btn-primary"
-						value="57 TK" style="float: right;" />
+					<input type="button" onclick="change(75,'Banglalink','prepaid')" class="btn btn-primary"
+						value="75 TK" style="float: right;" />
 				</div>
 			</div>
 			<div class="card">
 				<div class="card-body">
-					<h5 class="card-title">
-						90 Minutes <i class="fas fa-calendar-day"></i> 7 Days
+					<div class="card-text" style="width: 25px">
+					<img src="../assets/images/GP.png" height="25px"/>
+					</div><br>
+					<h5 class="card-title" style="float: left;">
+					<i class="fas fa-globe-asia"></i>
+						9GB  <i class="fas fa-calendar-day"></i> 7 Days
 					</h5>
-					<div class="card-text" style="float: left;">
-						<i class="fa fa-calendar" aria-hidden="true"></i> 7 Days
-					</div>
-					<input type="button" onclick="change(57)" class="btn btn-primary"
-						value="57 TK" style="float: right;" />
+					<input type="button" onclick="change(75,'Grameenphone','skitto')" class="btn btn-primary"
+						value="75 TK" style="float: right;" />
 				</div>
 			</div>
 
 		</div>
 	</div>
-	<div class="wrapper">
+	<div class="wrapper" style="border: 2px">
 		<div class="carousel1 owl-carousel">
 		<c:forEach var="comments" items="${entityList}">
 			<div class="card" style="background-color: #2ed8b6;color: white">

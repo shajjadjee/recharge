@@ -1,6 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <title>Wallet</title>
 <jsp:include page="layout/header.jsp" />
+<br>
 <div class="col-sm-10">
 	<div class="col-md-7 col-xs-12 pull-right form-box">
 		<div class="form-top">

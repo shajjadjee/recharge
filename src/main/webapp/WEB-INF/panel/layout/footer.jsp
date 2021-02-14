@@ -3,7 +3,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
-					<p>© My recharge . All Rights Reserved.</p>
+					<p>© <a style="color: white;" href="/"> My recharge</a> . All Rights Reserved.</p>
 				</div>
 			</div>
 		</div>
